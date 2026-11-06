@@ -3,69 +3,174 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090e18">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101d2d">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Pulse Interval">
-  <meta name="description" content="בונים אימון. שומרים תוכנית. נכנסים לקצב. סטופר מקצועי לאימוני טאבטה, HIIT, כוח ועוד.">
+  <meta name="description" content="ניהול כמויות חיפוי טובזה וקופינג לפי אזור, עם תמונות ודוחות הזמנה.">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icon-192.png">
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Pulse Interval — Smart Workout Timer</title>
+  <title>StoneCount | כמויות אבן</title>
+  <style>
+    :root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;--bg:#0c1521;--surface:#152336;--surface2:#1b2d43;--line:#2d435b;--ink:#f0f5fb;--muted:#adbfce;--accent:#66dbc1;--accent-ink:#092a28;--danger:#ff9eaa;--radius:16px}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 0% -20%,#163a43 0,transparent 42%),var(--bg);color:var(--ink);line-height:1.45}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}button,input,select{touch-action:manipulation}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}input,select{border:1px solid #496077;background:#0d1a2b;color:var(--ink);width:100%;min-width:0;border-radius:12px;padding:13px;min-height:47px}input::placeholder{color:#91a5b6}input[type=file]{padding:10px;font-size:13px}input[type=number]{direction:ltr;text-align:right}h1,h2,h3,p{margin-top:0}h1{font-size:26px;letter-spacing:-.5px}h2{font-size:19px}h3{font-size:17px}small,.muted{color:var(--muted)}.hidden,[hidden]{display:none!important}.container{max-width:930px;margin:0 auto;padding:22px 16px calc(32px + env(safe-area-inset-bottom))}.site-header{position:sticky;top:0;z-index:20;background:#0e1c2cee;backdrop-filter:blur(16px);border-bottom:1px solid #29445b;padding:calc(12px + env(safe-area-inset-top)) 18px 11px}.head-inner{max-width:930px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:11px;min-width:0}.brand-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,#66dbc1,#398da0);display:grid;place-items:center;color:#0d2732}.brand-word{font-weight:900;font-size:21px;line-height:1}.brand-word em{color:var(--accent);font-style:normal}.subhead{font-size:11px;margin-top:5px;color:var(--muted)}.owner{font-size:10px;white-space:nowrap;color:#d1e2ef;border:1px solid var(--line);border-radius:24px;padding:7px 10px}.tabs{max-width:930px;margin:11px auto 0;display:flex;gap:7px}.tab{flex:1;border:1px solid transparent;background:transparent;color:#bfcedb;padding:10px 8px;border-radius:11px;font-weight:700}.tab[aria-selected=true]{background:#284e53;color:#adffec;border-color:#427772}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.05em;color:#77dcca}.lede{color:#b8cada;font-size:14px;margin-bottom:0}.hero{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:23px}.stat,.panel,.area-card,.report-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}.stat{padding:15px}.stat-label{font-size:12px;color:#b9ceda}.stat-number{display:block;font-size:clamp(23px,4vw,31px);font-weight:850;margin:7px 0 2px;direction:ltr;text-align:right;font-variant-numeric:tabular-nums}.stat-unit{font-size:12px;color:#9ec9c6}.panel{padding:19px;margin-bottom:16px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid transparent;min-height:43px;border-radius:12px;padding:10px 15px;font-weight:750;font-size:14px;text-align:center}.btn.primary{background:var(--accent);color:var(--accent-ink)}.btn.secondary{background:var(--surface2);color:var(--ink);border-color:var(--line)}.btn.ghost{background:transparent;color:#c6dae5;border-color:#38536d}.btn.danger{background:#4b2e39;color:#ffd5d9;border-color:#744652}.btn.small{font-size:12px;min-height:36px;padding:7px 10px;border-radius:9px}.btn.full{width:100%}.toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px}.toolbar h2{margin:0}.searchbox{margin:0 0 15px}.searchbox input{background:#14243a}.area-card{margin-bottom:13px;overflow:hidden}.area-top{display:flex;align-items:center;gap:13px;padding:16px}.area-image,.entry-photo{object-fit:cover;flex:0 0 auto;border-radius:11px;background:#263b4f}.area-image{width:78px;height:72px}.entry-photo{width:60px;height:58px}.photo-placeholder{display:grid;place-items:center;color:#84b3bd;font-size:24px;border:1px dashed #456177}.area-main{flex:1;min-width:0}.area-main h3{margin:0 0 6px;overflow-wrap:anywhere}.mini-stats{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:#d0dfeb}.mini-stats span{background:#24384f;border-radius:7px;padding:4px 7px}.area-controls{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 15px}.entries{border-top:1px solid var(--line);background:#102032;padding:10px 16px 16px}.entry{background:#182b40;border:1px solid #2d4860;border-radius:12px;margin:9px 0;padding:12px}.entry-top{display:flex;gap:10px;align-items:center}.entry-main{flex:1;min-width:0}.entry-heading{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}.entry-heading strong{overflow-wrap:anywhere}.chip{padding:3px 8px;background:#26485c;color:#c5f2f2;border-radius:7px;font-size:11px}.chip.coping{background:#3b3a59;color:#e0d6ff}.entry-detail{color:#b5c9d9;font-size:12px}.entry-amount{font-size:16px;font-weight:850;color:#7ae9c9;white-space:nowrap;margin-inline-start:auto}.entry-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}.empty{border:1px dashed #37536b;border-radius:14px;padding:25px 14px;text-align:center;color:#b5c7d4}.empty strong{display:block;color:#edf5f9;margin-bottom:6px}.hint{color:#a9becc;font-size:12px;line-height:1.7}.summary-list{display:grid;gap:12px}.report-card{padding:15px}.report-card h3{margin:0 0 11px}.summary-table{border-collapse:collapse;width:100%;font-size:13px}.summary-table th,.summary-table td{padding:10px 8px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}.summary-table th{color:#aabfcd;font-size:12px;font-weight:650}.summary-table tr:last-child td{border-bottom:0}.numeric{white-space:nowrap;direction:ltr;text-align:right;font-variant-numeric:tabular-nums}.highlight{color:#87efd7;font-weight:800}.caption{font-size:12px;color:#a4b8c9;line-height:1.65}.report-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.report-heading h2{margin:0}.settings-line{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.field{margin-bottom:14px}.field label{display:block;margin-bottom:7px;font-size:13px;font-weight:650;color:#d3e2eb}.field .help{font-size:11px;color:#9cb2c2;margin-top:5px}.field.short{width:min(180px,100%)}.divider{height:1px;background:var(--line);margin:18px 0}.button-group{display:flex;gap:8px;flex-wrap:wrap}.footer{text-align:center;padding:20px 10px 35px;color:#8fa9b9;font-size:12px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;background:#28504a;color:#e7fff5;border:1px solid #5da791;border-radius:12px;padding:13px 18px;font-size:13px;box-shadow:0 12px 30px #0007;max-width:calc(100vw - 30px);text-align:center}.banner{border-radius:13px;margin-bottom:16px;background:#4c3036;border:1px solid #9a5862;padding:12px;color:#ffe2e3}.modal{width:min(560px,calc(100vw - 24px));max-height:min(90dvh,850px);padding:0;border:1px solid #3f5a70;border-radius:19px;background:#15263a;color:var(--ink);box-shadow:0 20px 65px #000a;overflow:auto}.modal::backdrop{background:#000b;backdrop-filter:blur(3px)}.modal-head{position:sticky;top:0;background:#172a40;padding:18px 20px;border-bottom:1px solid #34506a;display:flex;align-items:center;justify-content:space-between;gap:8px;z-index:1}.modal-head h2{margin:0}.icon-close{border:0;background:#32485c;color:white;border-radius:9px;width:35px;height:35px;font-size:23px}.modal-body{padding:18px 20px 20px}.modal-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}.modal-actions .btn.primary{flex:1}.type-select{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px}.type-btn{border:1px solid #486078;background:#102135;color:#d4e2eb;padding:14px 8px;border-radius:12px;font-weight:750}.type-btn[aria-pressed=true]{background:#23524d;color:#b9ffec;border-color:#65d6bd}.photo-preview{position:relative;display:flex;align-items:center;gap:10px;margin-top:10px}.photo-preview img{width:100px;height:82px;border-radius:10px;object-fit:cover}.tiny-note{font-size:11px;color:#98acbd}.print-report{display:none} .nowrap{white-space:nowrap}
+    @media (max-width:570px){.container{padding:17px 12px 26px}.site-header{padding-right:12px;padding-left:12px}.brand-word{font-size:18px}.owner{font-size:9px;padding:6px}.stats{gap:8px}.stat{padding:11px}.stat-label{font-size:11px}.stat-number{font-size:23px}.hero{align-items:center}.hero h1{font-size:23px;margin-bottom:5px}.area-top{padding:13px}.area-image{width:66px;height:65px}.area-controls{padding:0 13px 13px}.entries{padding:8px 12px 13px}.entry{padding:10px}.entry-amount{margin:0;font-size:15px}.entry-photo{width:48px;height:52px}.panel{padding:14px}.summary-table{font-size:12px}.summary-table th,.summary-table td{padding:8px 4px}.btn{font-size:13px}}
+    @media print{
+      @page{size:A4;margin:12mm}
+      *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+      html,body{background:white!important;color:#111!important;width:auto!important;max-width:100%!important;overflow:visible!important}
+      .site-header,.container,.footer,.toast,.modal,.banner{display:none!important}
+      .print-report{display:block!important;font-family:Arial,sans-serif;direction:rtl;color:#111;font-size:11pt;line-height:1.4;width:100%;max-width:100%;overflow-wrap:break-word}
+      .print-report h1{font-size:20pt;margin-bottom:6mm;overflow-wrap:break-word}.print-report h2{font-size:15pt;margin:5mm 0 3mm}.print-report h3{font-size:12pt}
+      .print-report p{font-size:10pt}.print-report table{border-collapse:collapse;width:100%;font-size:9pt;margin:3mm 0 7mm}
+      .print-report th,.print-report td{border:1px solid #999;text-align:right;padding:5px;vertical-align:top}
+      .print-report thead{display:table-header-group}.print-report tr{break-inside:avoid}
+      .print-report .print-area{break-before:page}.print-report .print-area:first-of-type{break-before:auto}
+      .print-report .print-area h2{break-after:avoid}.print-report .print-area-photo{height:95px;max-width:160px;object-fit:cover;margin:4px 0}
+      .print-report .print-entry-photo{width:65px;height:55px;object-fit:cover}.print-report .print-total{break-before:page}
+      .print-report .print-foot{font-size:9pt;color:#555;margin-top:5mm;max-width:100%;overflow-wrap:anywhere}
+    }
+  </style>
 </head>
 <body>
-  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z" fill="currentColor" stroke="none"/></symbol>
-    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="3"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
-    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
-    <symbol id="i-next" viewBox="0 0 24 24"><path d="m5 5 9 7-9 7V5Zm12 0v14"/></symbol>
-    <symbol id="i-previous" viewBox="0 0 24 24"><path d="m19 5-9 7 9 7V5ZM7 5v14"/></symbol>
-    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m14 5 5 5M4 20l4.7-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
-    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 4h4M6 7l1 13h10l1-13M10 11v5M14 11v5"/></symbol>
-    <symbol id="i-time" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
-    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 13h4l3-8 4 14 3-6h4"/></symbol>
-    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="m6 6 12 12M3 7l4-4M17 21l4-4M2 10l8-8M14 22l8-8"/></symbol>
-    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6M16 14v6"/></symbol>
-    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v3h16v-3"/></symbol>
-    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 17V5m0 0-5 5m5-5 5 5M4 17v3h16v-3"/></symbol>
-    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M5 9H2v6h3l5 4V5L5 9ZM14 9a4 4 0 0 1 0 6M17 6a8 8 0 0 1 0 12"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
-    <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></symbol>
-    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 10 6 6 6-6"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7V3m0 4h-4M20 7a9 9 0 1 0 1 8"/></symbol>
-    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3L12 2Z"/></symbol>
-    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
-  </svg>
-
-  <header class="app-header">
-    <div class="header-inner">
-      <button type="button" class="brand" data-action="home" aria-label="חזרה למסך הראשי">
-        <span class="brand-mark"><svg class="brand-graphic" viewBox="0 0 38 38" fill="none" aria-hidden="true"><circle cx="19" cy="19" r="15.5" stroke="currentColor" stroke-width="2.2" opacity=".5"/><path d="m7 20 8 0 3-8 4 15 3-7h6" stroke="currentColor" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="brand-type"><strong>PULSE<span>INTERVAL</span></strong><small>TRAIN YOUR TIME</small></span>
-      </button>
-      <div class="header-side"><span class="header-live"><span class="live-dot"></span> FOCUS MODE</span><button type="button" class="header-add" data-action="new"><svg class="ic"><use href="#i-plus"/></svg><span>אימון חדש</span></button></div>
+  <header class="site-header">
+    <div class="head-inner">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M3 20h18M5 20V8l6-4v16M11 9h8v11M8 10v2m0 3v2m6-4h2m-2 4h2"/></svg>
+        </div>
+        <div><div class="brand-word">STONE<em>COUNT</em></div><div class="subhead">כמויות אבן לפי אזורי עבודה</div></div>
+      </div>
+      <span class="owner">Mordi Ben Aderet</span>
     </div>
-  </header>
-
-  <div class="shell">
-    <nav class="main-nav" id="mainNav" aria-label="ניווט ראשי">
-      <button data-page="home" class="nav-btn active"><svg class="ic"><use href="#i-activity"/></svg>התוכניות שלי</button>
-      <button data-page="history" class="nav-btn"><svg class="ic"><use href="#i-calendar"/></svg>היסטוריה</button>
-      <button data-page="settings" class="nav-btn"><svg class="ic"><use href="#i-settings"/></svg>הגדרות</button>
+    <nav class="tabs" aria-label="ניווט ראשי">
+      <button type="button" class="tab" data-tab="areas" aria-selected="true">▦ &nbsp; אזורי עבודה</button>
+      <button type="button" class="tab" data-tab="report" aria-selected="false">▤ &nbsp; סיכום והזמנה</button>
     </nav>
-    <main id="view" tabindex="-1"></main>
-    <footer class="app-footer" id="appFooter"><div class="footer-line"></div><span>DESIGNED &amp; DEVELOPED BY</span> <strong>Mordi Ben Aderet</strong><span class="footer-copyright">© 2026 PULSE INTERVAL</span></footer>
-  </div>
+  </header>
+  <main class="container">
+    <div id="storageError" class="banner hidden" role="alert"></div>
+    <section class="stats" aria-label="סיכום כמויות">
+      <div class="stat"><div class="stat-label">חיפוי טובזה</div><strong class="stat-number" id="topTobeza">0</strong><div class="stat-unit">מ״ר</div></div>
+      <div class="stat"><div class="stat-label">קופינג</div><strong class="stat-number" id="topCoping">0</strong><div class="stat-unit">מטר אורך</div></div>
+      <div class="stat"><div class="stat-label">אזורי עבודה</div><strong class="stat-number" id="topAreas">0</strong><div class="stat-unit">אזורים</div></div>
+    </section>
+    <section id="areasView" aria-label="אזורי עבודה">
+      <div class="hero"><div><div class="eyebrow">ניהול שטח</div><h1>אזורי העבודה</h1><p class="lede">בכל אזור אפשר להוסיף כמה פאות טובזה וקופינג שצריך.</p></div></div>
+      <div class="toolbar"><h2>רשימת אזורים</h2><button type="button" id="newArea" class="btn primary">＋ אזור חדש</button></div>
+      <div class="searchbox"><input type="search" id="search" aria-label="חיפוש אזור או אלמנט" placeholder="חיפוש אזור או אלמנט..." autocomplete="off"></div>
+      <div id="areasList"></div>
+    </section>
+    <section id="reportView" hidden aria-label="סיכום והזמנה">
+      <div class="hero"><div><div class="eyebrow">הכנה להזמנה</div><h1>סיכום לפי אזור</h1><p class="lede">טובזה במ״ר וקופינג במטר אורך, מופרד לפי רוחב.</p></div></div>
+      <section class="panel">
+        <div class="settings-line"><div class="field short"><label for="waste">פחת להזמנה (%)</label><input id="waste" type="number" min="0" max="100" step="0.5" inputmode="decimal" value="5"></div><p class="caption">הפחת מתווסף רק לכמות המוזמנת. הכמות נטו נשארת ללא שינוי.</p></div>
+        <div class="button-group"><button class="btn primary" id="exportPdf">▤ &nbsp; PDF / הדפסה</button><button class="btn secondary" id="exportCsv">↓ &nbsp; ייצוא Excel (CSV)</button></div>
+        <p class="caption" style="margin:12px 0 0">ליצירת PDF בחר "שמירה כ-PDF" במסך ההדפסה. קובץ CSV נפתח ב-Excel.</p>
+      </section>
+      <div id="reportAreas" class="summary-list"></div>
+      <section class="panel" style="margin-top:16px"><div class="report-heading"><h2>סיכום הזמנה לכל הפרויקט</h2></div><div id="reportGlobal"></div></section>
+      <section class="panel"><h2>גיבוי ושחזור</h2><p class="hint">כל הנתונים והתמונות נשמרים במכשיר זה בלבד. מומלץ לשמור קובץ גיבוי לפני עדכון האפליקציה או החלפת טלפון.</p><div class="button-group"><button class="btn secondary" id="exportBackup">↓ &nbsp; הורדת גיבוי</button><button class="btn ghost" id="importBackup">↑ &nbsp; שחזור מגיבוי</button></div><input type="file" id="importFile" accept=".json,application/json" hidden></section>
+    </section>
+    <div class="footer">Created by Mordi Ben Aderet · StoneCount v5</div>
+  </main>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <section id="printReport" class="print-report" aria-label="דוח להדפסה"></section>
 
-  <div class="toast" role="status" aria-live="polite" id="toast"></div>
-  <input type="file" id="backupPicker" accept=".json,application/json" hidden>
-  <script src="./app.js" defer></script>
+  <dialog id="areaDialog" class="modal" aria-labelledby="areaDialogTitle">
+    <div class="modal-head"><h2 id="areaDialogTitle">אזור עבודה חדש</h2><button type="button" class="icon-close" data-close="areaDialog" aria-label="סגור">×</button></div>
+    <form id="areaForm" class="modal-body">
+      <div class="field"><label for="areaName">שם האזור *</label><input id="areaName" required maxlength="120" placeholder="למשל: קיר פיתוח בניין 4"></div>
+      <div class="field"><label for="areaPhoto">תמונת האזור (לא חובה)</label><input type="file" id="areaPhoto" accept="image/*"><div id="areaPhotoPreview" class="photo-preview hidden"><img id="areaPhotoImg" alt="תמונת האזור"><button type="button" id="removeAreaPhoto" class="btn ghost small">הסר תמונה</button></div></div>
+      <div class="modal-actions"><button type="submit" class="btn primary" id="saveArea">שמור אזור</button><button type="button" class="btn secondary" data-close="areaDialog">ביטול</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="itemDialog" class="modal" aria-labelledby="itemDialogTitle">
+    <div class="modal-head"><h2 id="itemDialogTitle">הוספת אלמנט</h2><button type="button" class="icon-close" data-close="itemDialog" aria-label="סגור">×</button></div>
+    <form id="itemForm" class="modal-body">
+      <p class="hint" id="itemAreaName" style="margin-bottom:14px"></p>
+      <label style="display:block;margin-bottom:7px;font-size:13px;font-weight:650">סוג אלמנט</label>
+      <div class="type-select" role="group" aria-label="סוג אלמנט"><button type="button" class="type-btn" id="typeT" aria-pressed="true">▤ חיפוי טובזה</button><button type="button" class="type-btn" id="typeC" aria-pressed="false">▰ קופינג</button></div>
+      <div class="field"><label for="itemName">כותרת האלמנט *</label><input id="itemName" required maxlength="120" placeholder="למשל: פאה צפונית"></div>
+      <div id="tobezaFields" class="field"><label for="tobezaArea">שטח חיפוי טובזה (מ״ר) *</label><input id="tobezaArea" type="number" min="0.001" step="any" inputmode="decimal" placeholder="למשל: 8.5"><p class="help">הזן שטח מוכן במ״ר. האפליקציה אינה מחשבת אורך × גובה.</p></div>
+      <div id="copingFields" hidden><div class="field"><label for="copingLength">אורך קופינג (מטר אורך) *</label><input id="copingLength" type="number" min="0.001" step="any" inputmode="decimal" placeholder="למשל: 12.5"></div><div class="field"><label for="copingWidth">רוחב קופינג (ס״מ) *</label><input id="copingWidth" type="number" min="0.001" step="any" inputmode="decimal" placeholder="למשל: 35"></div><p class="hint">הכמות להזמנה היא במטר אורך. הרוחב משמש להפרדה בין סוגי הקופינג.</p></div>
+      <div class="field"><label for="itemPhoto">תמונת האלמנט (לא חובה)</label><input id="itemPhoto" type="file" accept="image/*"><div id="itemPhotoPreview" class="photo-preview hidden"><img id="itemPhotoImg" alt="תמונת האלמנט"><button type="button" id="removeItemPhoto" class="btn ghost small">הסר תמונה</button></div></div>
+      <div class="modal-actions"><button type="submit" class="btn primary" id="saveItem">שמור אלמנט</button><button type="button" class="btn secondary" data-close="itemDialog">ביטול</button></div>
+    </form>
+  </dialog>
+  <script>
+    'use strict';
+    const $=id=>document.getElementById(id), escapeHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const asNum=v=>{const x=Number(String(v??'').trim().replace(',','.'));return Number.isFinite(x)?x:NaN};
+    const positive=v=>{const x=asNum(v);return Number.isFinite(x)&&x>0&&x<=1000000?x:null};
+    const fmt=v=>Number(v||0).toLocaleString('he-IL',{maximumFractionDigits:3});
+    const fmtUnit=(v,u)=>`${fmt(v)} ${u}`;
+    const photoSafe=s=>typeof s==='string'&&/^data:image\/(?:jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(s)&&s.length<3000000?s:null;
+    const uuid=()=>globalThis.crypto?.randomUUID?.()||('s-'+Date.now()+'-'+Math.random().toString(36).slice(2));
+    const now=()=>new Date().toISOString();
+    const state={db:null,areas:[],currentAreaId:null,currentItemId:null,currentKind:'t',areaPhoto:null,itemPhoto:null,pendingImages:0,collapsed:new Set(),waste:5,tab:'areas'};
+    let toastTimer;
+    function notify(message){$('toast').textContent=message;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),3500)}
+    function showStorageError(e){$('storageError').textContent='לא ניתן לגשת לאחסון במכשיר. השמירה לא תפעל עד שתאפשר אחסון בדפדפן. '+(e?.message||'');$('storageError').classList.remove('hidden')}
+    function openDB(){return new Promise((resolve,reject)=>{if(!window.indexedDB)return reject(Error('IndexedDB אינו זמין'));const r=indexedDB.open('stonecount-db',2);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('areas'))d.createObjectStore('areas',{keyPath:'id'});if(!d.objectStoreNames.contains('entries'))d.createObjectStore('entries',{keyPath:'id'})};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.onblocked=()=>reject(Error('סגור חלוניות נוספות של האפליקציה ונסה שוב'))})}
+    function getAll(store){return new Promise((resolve,reject)=>{const r=state.db.transaction(store,'readonly').objectStore(store).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+    function getById(store,id){return new Promise((resolve,reject)=>{const r=state.db.transaction(store,'readonly').objectStore(store).get(id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+    function putArea(area){return new Promise((resolve,reject)=>{const t=state.db.transaction('areas','readwrite');t.objectStore('areas').put(area);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error)})}
+    function deleteArea(id){return new Promise((resolve,reject)=>{const t=state.db.transaction('areas','readwrite');t.objectStore('areas').delete(id);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error)})}
+    function saveManyAreas(areas){return new Promise((resolve,reject)=>{const t=state.db.transaction('areas','readwrite');for(const a of areas)t.objectStore('areas').put(a);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error)})}
+    // v4 שמרה טובזה כאורך*גובה וקופינג כאורך+רוחב (second). גרסה 5 ממירה אותם בלי לאבד כמויות.
+    function normalizeItem(i){if(!i||typeof i!=='object')return null;const kind=i.kind||i.type;if(kind!=='t'&&kind!=='c')return null;const out={...i,id:String(i.id||uuid()),kind,name:String(i.name||'אלמנט ללא שם').slice(0,120),created:i.created||now(),photo:photoSafe(i.photo)};
+      if(kind==='t'){const area=positive(i.quantity)??(positive(i.area)??(positive(i.length)&&positive(i.second)?positive(i.length)*positive(i.second):null));out.quantity=area;delete out.width}else{out.length=positive(i.length);out.width=positive(i.width)??positive(i.second);delete out.quantity}return out}
+    function normalizeArea(a){const items=Array.isArray(a.items)?a.items.map(normalizeItem).filter(Boolean):[];return {...a,id:String(a.id||uuid()),name:String(a.name||'אזור ללא שם').slice(0,120),created:a.created||now(),photo:photoSafe(a.photo),items}}
+    async function migrateEntries(){const old=await getAll('entries');if(!old.length||await getById('areas','legacy-import'))return;const items=old.map(i=>{if(i.type==='t')return normalizeItem({...i,kind:'t',quantity:i.area});if(i.type==='c')return normalizeItem({...i,kind:'c',width:i.width});return null}).filter(Boolean);if(items.length){await putArea({id:'legacy-import',name:'אלמנטים מגרסה ישנה – יש לבדוק מידות',created:'2000-01-01T00:00:00Z',photo:null,items})}}
+    async function refresh(){const raw=await getAll('areas');const normalized=raw.map(normalizeArea);const updated=normalized.filter((a,k)=>JSON.stringify(a)!==JSON.stringify(raw[k]));if(updated.length)await saveManyAreas(updated);state.areas=normalized.sort((a,b)=>String(a.created).localeCompare(String(b.created)));render()}
+    async function persistArea(a){try{await putArea(a);await refresh();notify('השינויים נשמרו במכשיר');return true}catch(e){alert('השמירה נכשלה. ייתכן שאחסון המכשיר מלא. מומלץ לייצא גיבוי.\n'+(e.message||''));return false}}
+    function validItem(i){return i.kind==='t'?positive(i.quantity)!==null:positive(i.length)!==null&&positive(i.width)!==null}
+    function areaTotals(area){return area.items.reduce((o,i)=>{if(!validItem(i))return o;if(i.kind==='t')o.t+=i.quantity;else o.c+=i.length;return o},{t:0,c:0})}
+    function totalAll(){return state.areas.reduce((o,a)=>{const t=areaTotals(a);o.t+=t.t;o.c+=t.c;return o},{t:0,c:0})}
+    function groupedCoping(items){const map=new Map();for(const i of items){if(i.kind!=='c'||!validItem(i))continue;const key=Number(i.width.toFixed(3));map.set(key,(map.get(key)||0)+i.length)}return [...map].sort((a,b)=>a[0]-b[0]).map(([width,length])=>({width,length}))}
+    function getWaste(){return state.waste}function withWaste(x){return x*(1+getWaste()/100)}
+    function showTab(tab){state.tab=tab;const showReport=tab==='report';$('areasView').hidden=showReport;$('reportView').hidden=!showReport;document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)));render();window.scrollTo({top:0,behavior:'instant'})}
+    document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+    function imageOrPlaceholder(src,cls,alt){const safe=photoSafe(src);return safe?`<img class="${cls}" src="${safe}" alt="${escapeHtml(alt)}">`:`<div class="${cls} photo-placeholder" aria-hidden="true">▧</div>`}
+    function render(){const all=totalAll();$('topTobeza').textContent=fmt(all.t);$('topCoping').textContent=fmt(all.c);$('topAreas').textContent=String(state.areas.length);renderAreas();renderReport()}
+    function renderAreas(){const query=$('search').value.trim().toLocaleLowerCase('he');const filtered=state.areas.filter(a=>!query||a.name.toLocaleLowerCase('he').includes(query)||a.items.some(i=>i.name.toLocaleLowerCase('he').includes(query)));
+      $('areasList').innerHTML=filtered.map(a=>{const t=areaTotals(a),collapsed=state.collapsed.has(a.id);return `<article class="area-card"><div class="area-top">${imageOrPlaceholder(a.photo,'area-image','תמונת אזור '+a.name)}<div class="area-main"><h3>${escapeHtml(a.name)}</h3><div class="mini-stats"><span>${a.items.length} אלמנטים</span><span>${fmtUnit(t.t,'מ״ר טובזה')}</span><span>${fmtUnit(t.c,'מ״א קופינג')}</span></div></div></div><div class="area-controls"><button type="button" class="btn primary small" data-action="addItem" data-area="${escapeHtml(a.id)}">＋ הוסף אלמנט</button><button type="button" class="btn secondary small" data-action="toggle" data-area="${escapeHtml(a.id)}" aria-expanded="${!collapsed}">${collapsed?'הצג אלמנטים':'הסתר אלמנטים'}</button><button type="button" class="btn ghost small" data-action="editArea" data-area="${escapeHtml(a.id)}">עריכת אזור</button><button type="button" class="btn danger small" data-action="deleteArea" data-area="${escapeHtml(a.id)}">מחיקה</button></div>${collapsed?'':`<div class="entries">${a.items.length?a.items.map(i=>{const detail=i.kind==='t'?'חיפוי טובזה – הזנת שטח במ״ר':`קופינג · רוחב ${fmt(i.width)} ס״מ`;const amount=!validItem(i)?'נדרשת עריכת מידות':i.kind==='t'?fmtUnit(i.quantity,'מ״ר'):fmtUnit(i.length,'מ״א');return `<div class="entry"><div class="entry-top">${i.photo?imageOrPlaceholder(i.photo,'entry-photo','תמונת '+i.name):''}<div class="entry-main"><div class="entry-heading"><strong>${escapeHtml(i.name)}</strong><span class="chip ${i.kind==='c'?'coping':''}">${i.kind==='t'?'טובזה':'קופינג'}</span></div><div class="entry-detail">${detail}</div></div><div class="entry-amount">${amount}</div></div><div class="entry-actions"><button type="button" class="btn ghost small" data-action="editItem" data-area="${escapeHtml(a.id)}" data-item="${escapeHtml(i.id)}">עריכה</button><button type="button" class="btn danger small" data-action="deleteItem" data-area="${escapeHtml(a.id)}" data-item="${escapeHtml(i.id)}">מחיקה</button></div></div>`}).join(''):'<div class="empty"><strong>אין עדיין אלמנטים באזור זה</strong>אפשר להוסיף כמה פאות טובזה ומקטעי קופינג שצריך.</div>'}</div>`}</article>`}).join('')||`<div class="empty"><strong>${query?'לא נמצאו אזורים מתאימים':'אין עדיין אזורי עבודה'}</strong>${query?'נסה שם אחר בחיפוש.':'צור אזור ראשון והוסף אליו אלמנטים.'}</div>`}
+
+    function summaryTable(rows){return `<table class="summary-table"><thead><tr><th>חומר</th><th>כמות נטו</th><th>להזמנה (כולל פחת)</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.label)}</td><td class="numeric">${fmtUnit(r.qty,r.unit)}</td><td class="numeric highlight">${fmtUnit(withWaste(r.qty),r.unit)}</td></tr>`).join('')}</tbody></table>`}
+    function summaryRows(items){const rows=[];const t=items.filter(i=>i.kind==='t'&&validItem(i)).reduce((s,i)=>s+i.quantity,0);if(t>0)rows.push({label:'חיפוי טובזה',qty:t,unit:'מ״ר'});groupedCoping(items).forEach(g=>rows.push({label:`קופינג רוחב ${fmt(g.width)} ס״מ`,qty:g.length,unit:'מ״א',width:g.width}));return rows}
+    function renderReport(){const areas=state.areas;$('reportAreas').innerHTML=areas.length?areas.map(a=>`<article class="report-card"><h3>${escapeHtml(a.name)}</h3>${summaryRows(a.items).length?summaryTable(summaryRows(a.items)):'<p class="hint">לא הוזנו כמויות לאזור זה.</p>'}<p class="caption" style="margin:6px 0 0">${a.items.length} אלמנטים באזור</p></article>`).join(''):'<div class="empty">עדיין אין נתונים לדוח. עבור לאזורי עבודה כדי להתחיל.</div>';
+      const all=areas.flatMap(a=>a.items);$('reportGlobal').innerHTML=summaryRows(all).length?summaryTable(summaryRows(all)):'<p class="hint">אין כמויות להזמנה.</p>'}
+    $('areasList').addEventListener('click',async e=>{const b=e.target.closest('button[data-action]');if(!b)return;const {action,area:aid,item:iid}=b.dataset;const area=state.areas.find(a=>a.id===aid);if(!area)return;if(action==='addItem')openItemDialog(aid);if(action==='editArea')openAreaDialog(aid);if(action==='editItem')openItemDialog(aid,iid);if(action==='toggle'){state.collapsed.has(aid)?state.collapsed.delete(aid):state.collapsed.add(aid);renderAreas()}if(action==='deleteArea'){if(!confirm(`למחוק את "${area.name}" ואת כל ${area.items.length} האלמנטים שבתוכו? לא ניתן לבטל.`))return;try{await deleteArea(aid);await refresh();notify('האזור נמחק')}catch(e){alert('מחיקה נכשלה')}}if(action==='deleteItem'){const item=area.items.find(i=>i.id===iid);if(!item||!confirm(`למחוק את האלמנט "${item.name}"?`))return;const updated={...area,items:area.items.filter(i=>i.id!==iid),updated:now()};await persistArea(updated)}});
+    $('search').addEventListener('input',renderAreas);
+    $('waste').addEventListener('input',()=>{const n=asNum($('waste').value);if(n>=0&&n<=100){state.waste=n;try{localStorage.setItem('stonecount-waste',String(n))}catch{}renderReport()}});
+    function resetPreview(which){const isArea=which==='area',preview=$(isArea?'areaPhotoPreview':'itemPhotoPreview'),input=$(isArea?'areaPhoto':'itemPhoto');preview.classList.add('hidden');input.value=''}
+    function updatePreview(which){const v=which==='area'?state.areaPhoto:state.itemPhoto;const prefix=which==='area'?'area':'item';$(prefix+'PhotoPreview').classList.toggle('hidden',!v);if(v)$(prefix+'PhotoImg').src=v}
+    function openAreaDialog(id=null){const a=state.areas.find(x=>x.id===id);state.currentAreaId=a?.id||null;state.areaPhoto=photoSafe(a?.photo);$('areaForm').reset();$('areaName').value=a?.name||'';$('areaDialogTitle').textContent=a?'עריכת אזור עבודה':'אזור עבודה חדש';updatePreview('area');$('areaDialog').showModal();$('areaName').focus()}
+    $('newArea').onclick=()=>openAreaDialog();$('removeAreaPhoto').onclick=()=>{state.areaPhoto=null;resetPreview('area')};$('removeItemPhoto').onclick=()=>{state.itemPhoto=null;resetPreview('item')};
+    function selectKind(kind){state.currentKind=kind;$('typeT').setAttribute('aria-pressed',String(kind==='t'));$('typeC').setAttribute('aria-pressed',String(kind==='c'));$('tobezaFields').hidden=kind!=='t';$('copingFields').hidden=kind!=='c';$('tobezaArea').required=kind==='t';$('copingLength').required=kind==='c';$('copingWidth').required=kind==='c';$('itemName').placeholder=kind==='t'?'למשל: פאה צפונית':'למשל: קופינג עליון'}
+    $('typeT').onclick=()=>selectKind('t');$('typeC').onclick=()=>selectKind('c');
+    function openItemDialog(aid,iid=null){const a=state.areas.find(x=>x.id===aid);if(!a)return;const i=a.items.find(x=>x.id===iid);state.currentAreaId=aid;state.currentItemId=i?.id||null;state.itemPhoto=photoSafe(i?.photo);$('itemForm').reset();$('itemAreaName').textContent='אזור: '+a.name;$('itemDialogTitle').textContent=i?'עריכת אלמנט':'הוספת אלמנט';selectKind(i?.kind||'t');$('itemName').value=i?.name||'';$('tobezaArea').value=i?.kind==='t'&&i.quantity!=null?i.quantity:'';$('copingLength').value=i?.kind==='c'&&i.length!=null?i.length:'';$('copingWidth').value=i?.kind==='c'&&i.width!=null?i.width:'';updatePreview('item');$('itemDialog').showModal();$('itemName').focus()}
+    document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());for(const id of ['areaDialog','itemDialog']){$(id).addEventListener('click',e=>{if(e.target===$(id))$(id).close()})}
+    async function reducePhoto(file){if(!file.type.startsWith('image/'))throw Error('נא לבחור קובץ תמונה');const url=URL.createObjectURL(file);try{const img=new Image();await new Promise((ok,no)=>{img.onload=ok;img.onerror=()=>no(Error('לא ניתן לפתוח תמונה זו'));img.src=url});const scale=Math.min(1,1400/Math.max(img.naturalWidth,img.naturalHeight));const cv=document.createElement('canvas');cv.width=Math.max(1,Math.round(img.naturalWidth*scale));cv.height=Math.max(1,Math.round(img.naturalHeight*scale));const ctx=cv.getContext('2d');if(!ctx)throw Error('לא ניתן לעבד תמונה');ctx.drawImage(img,0,0,cv.width,cv.height);const data=cv.toDataURL('image/jpeg',.78);if(!photoSafe(data))throw Error('התמונה גדולה מדי, נסה תמונה אחרת');return data}finally{URL.revokeObjectURL(url)}}
+    async function handlePhoto(which){const isArea=which==='area',input=$(isArea?'areaPhoto':'itemPhoto'),file=input.files[0];if(!file)return;const save=$(isArea?'saveArea':'saveItem');state.pendingImages++;save.disabled=true;save.textContent='מעבד תמונה...';try{const data=await reducePhoto(file);if(isArea)state.areaPhoto=data;else state.itemPhoto=data;updatePreview(which)}catch(e){alert('שגיאה בתמונה: '+e.message)}finally{state.pendingImages--;save.disabled=false;save.textContent=isArea?'שמור אזור':'שמור אלמנט'}}
+    $('areaPhoto').addEventListener('change',()=>handlePhoto('area'));$('itemPhoto').addEventListener('change',()=>handlePhoto('item'));
+    $('areaForm').addEventListener('submit',async e=>{e.preventDefault();if(state.pendingImages)return;const name=$('areaName').value.trim();if(!name)return alert('יש להזין שם אזור');const old=state.areas.find(a=>a.id===state.currentAreaId);const area={id:old?.id||uuid(),name,photo:state.areaPhoto,items:old?.items||[],created:old?.created||now(),updated:now()};$('saveArea').disabled=true;const ok=await persistArea(area);$('saveArea').disabled=false;if(ok){$('areaDialog').close();state.collapsed.delete(area.id)}});
+    $('itemForm').addEventListener('submit',async e=>{e.preventDefault();if(state.pendingImages)return;const area=state.areas.find(a=>a.id===state.currentAreaId),name=$('itemName').value.trim(),kind=state.currentKind;if(!area||!name)return alert('יש להזין כותרת');const quantity=positive($('tobezaArea').value),length=positive($('copingLength').value),width=positive($('copingWidth').value);if(kind==='t'&&!quantity)return alert('יש להזין שטח טובזה במ״ר, גדול מאפס');if(kind==='c'&&(!length||!width))return alert('יש להזין אורך במטר ורוחב בס״מ');const old=area.items.find(i=>i.id===state.currentItemId),entry={id:old?.id||uuid(),name,kind,photo:state.itemPhoto,created:old?.created||now(),updated:now(),...(kind==='t'?{quantity}:{length,width})};const updated={...area,items:old?area.items.map(i=>i.id===old.id?entry:i):[...area.items,entry],updated:now()};$('saveItem').disabled=true;const ok=await persistArea(updated);$('saveItem').disabled=false;if(ok){$('itemDialog').close();state.collapsed.delete(area.id);renderAreas()}});
+    function download(name,blob){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),30000)}
+    const dateStamp=()=>new Date().toLocaleDateString('sv-SE');
+    function csvCell(value){let s=String(value??'').replace(/\r|\n/g,' ');if(/^[=+@\-\t]/.test(s.trimStart())&&typeof value==='string')s="'"+s;return '"'+s.replace(/"/g,'""')+'"'}
+    function addCsvRows(rows,title,heads){rows.push([title]);rows.push(heads)}
+    $('exportCsv').onclick=()=>{const rows=[];addCsvRows(rows,'סיכום לפי אזור',['אזור','חומר','רוחב קופינג (ס״מ)','כמות נטו','יחידה','פחת (%)','כמות להזמנה']);for(const a of state.areas){for(const r of summaryRows(a.items)){const cop=r.unit==='מ״א',width=cop?r.width:'';rows.push([a.name,cop?'קופינג':'טובזה',width,Number(r.qty.toFixed(3)),r.unit,getWaste(),Number(withWaste(r.qty).toFixed(3))])}}rows.push([]);addCsvRows(rows,'פירוט אלמנטים',['אזור','אלמנט','סוג','שטח טובזה (מ״ר)','אורך קופינג (מ״א)','רוחב קופינג (ס״מ)']);for(const a of state.areas)for(const i of a.items){rows.push([a.name,i.name,i.kind==='t'?'טובזה':'קופינג',i.kind==='t'?(i.quantity??''):'',i.kind==='c'?(i.length??''):'',i.kind==='c'?(i.width??''):''])}rows.push([]);addCsvRows(rows,'סיכום כלל הפרויקט',['חומר','רוחב קופינג (ס״מ)','כמות נטו','יחידה','פחת (%)','כמות להזמנה']);for(const r of summaryRows(state.areas.flatMap(a=>a.items))){const cop=r.unit==='מ״א';rows.push([cop?'קופינג':'טובזה',cop?r.width:'',Number(r.qty.toFixed(3)),r.unit,getWaste(),Number(withWaste(r.qty).toFixed(3))])}const content='\ufeffsep=;\r\n'+rows.map(r=>r.map(csvCell).join(';')).join('\r\n');download('StoneCount-Order-'+dateStamp()+'.csv',new Blob([content],{type:'text/csv;charset=utf-8'}));notify('דוח CSV נוצר')};
+    const printRowData=i=>`<tr><td>${i.photo&&photoSafe(i.photo)?`<img class="print-entry-photo" src="${photoSafe(i.photo)}" alt="">`:''}</td><td>${escapeHtml(i.name)}</td><td>${i.kind==='t'?'חיפוי טובזה':'קופינג'}</td><td>${i.kind==='t'?fmtUnit(i.quantity??0,'מ״ר'):fmtUnit(i.length??0,'מ״א')}</td><td>${i.kind==='c'?fmtUnit(i.width??0,'ס״מ'):'—'}</td></tr>`;
+    function printTable(rows){return `<table><thead><tr><th>חומר</th><th>כמות נטו</th><th>כמות להזמנה (פחת ${fmt(getWaste())}%)</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.label)}</td><td>${fmtUnit(r.qty,r.unit)}</td><td><strong>${fmtUnit(withWaste(r.qty),r.unit)}</strong></td></tr>`).join('')}</tbody></table>`}
+    $('exportPdf').onclick=()=>{const title=`<h1>דוח הזמנת אבן – <span dir="ltr">StoneCount</span></h1><p>תאריך: ${new Date().toLocaleDateString('he-IL')} | פחת להזמנה: ${fmt(getWaste())}% | מספר אזורים: ${state.areas.length}</p>`;const areaSections=state.areas.map(a=>`<section class="print-area"><h2>אזור: ${escapeHtml(a.name)}</h2>${a.photo&&photoSafe(a.photo)?`<img class="print-area-photo" src="${photoSafe(a.photo)}" alt="">`:''}<h3>סיכום כמות להזמנה</h3>${printTable(summaryRows(a.items))}<h3>פירוט אלמנטים</h3><table><thead><tr><th>תמונה</th><th>אלמנט</th><th>סוג</th><th>כמות</th><th>רוחב קופינג</th></tr></thead><tbody>${a.items.map(printRowData).join('')}</tbody></table></section>`).join('');const end=`<section class="print-total"><h2>סיכום הזמנה – כלל הפרויקט</h2>${printTable(summaryRows(state.areas.flatMap(a=>a.items)))}<p class="print-foot">יש לאמת כמויות ומידות לפני ביצוע הזמנה. האורך של הקופינג נמדד במטר אורך; הרוחב מופיע בנפרד בס״מ.</p><p class="print-foot" dir="ltr">Created by Mordi Ben Aderet</p></section>`;$('printReport').innerHTML=title+areaSections+end;window.print()};
+    $('exportBackup').onclick=()=>{download('StoneCount-Backup-'+dateStamp()+'.json',new Blob([JSON.stringify({app:'StoneCount',version:5,exportedAt:now(),waste:getWaste(),areas:state.areas})],{type:'application/json'}));notify('קובץ גיבוי נוצר')};
+    $('importBackup').onclick=()=>$('importFile').click();
+    $('importFile').onchange=async()=>{const file=$('importFile').files[0];if(!file)return;try{if(file.size>100*1024*1024)throw Error('קובץ גיבוי גדול מדי');const obj=JSON.parse(await file.text());if(obj?.app!=='StoneCount'||!Array.isArray(obj.areas)||obj.areas.length>3000||obj.areas.some(a=>!a||typeof a!=='object'||typeof a.name!=='string'||typeof a.id!=='string'||!Array.isArray(a.items)||a.items.length>2000||a.items.some(i=>!i||!['t','c'].includes(i.kind)||typeof i.name!=='string')))throw Error('מבנה קובץ לא תקין');const incoming=obj.areas.map(normalizeArea);const count=incoming.reduce((s,a)=>s+a.items.length,0);if(count>25000)throw Error('קובץ גיבוי מכיל יותר מדי אלמנטים');if(!confirm(`לייבא ${incoming.length} אזורים ובהם ${count} אלמנטים?\nאזורים בעלי מזהה זהה יוחלפו. אזורים אחרים יישארו ללא שינוי.`))return;await saveManyAreas(incoming);if(obj.waste!==undefined){const w=asNum(obj.waste);if(w>=0&&w<=100){state.waste=w;$('waste').value=w;try{localStorage.setItem('stonecount-waste',String(w))}catch{}}}await refresh();notify('הגיבוי יובא בהצלחה')}catch(e){alert('ייבוא נכשל: '+(e.message||'קובץ לא תקין'))}finally{$('importFile').value=''}};
+    async function init(){try{const storedWaste=localStorage.getItem('stonecount-waste');const w=asNum(storedWaste);if(storedWaste!==null&&w>=0&&w<=100){state.waste=w;$('waste').value=w}}catch{}try{state.db=await openDB();await migrateEntries();await refresh()}catch(e){showStorageError(e);$('newArea').disabled=true;render()}if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+    init();
+  </script>
 </body>
 </html>
